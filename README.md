@@ -1,3 +1,5 @@
+High Level Architecture
+https://github.com/kluz116/rest_api/blob/master/blockDiagram.PNG
 The Rest API Service.
 
 The API has been developed by the flask rest api framework an extension for Flask that adds support for quickly building REST APIs.
