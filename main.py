@@ -41,7 +41,6 @@ def update_user():
         _json = request.json
         _id = _json['id']
         _name = _json['name']
-        # validate the received values
         if _name and _id and request.method == 'POST':
             sql = "UPDATE Users SET name=%s WHERE  id=%s"
             data = (_name, _id)
@@ -188,9 +187,9 @@ def delete_task(id):
     try:
         conn = mysql.connection
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM USER_TASKS WHERE  Id=%s", (id,))
+        cursor.execute("DELETE FROM USER_TASKS WHERE  Id = %s", (id,))
         conn.commit()
-        resp = jsonify('deleted successfully!')
+        resp = jsonify('Deleted')
         resp.status_code = 200
         return resp
     except Exception as e:
